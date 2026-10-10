@@ -25,3 +25,11 @@ for i in range(1,21):
 for i in range(1,21):
     if i % 2 == 0:
         print(i)
+# Exercise 3: While Loop
+name = input("What's your name? ").lower()
+ref = "mouad"
+while name != ref:
+    print("try again")
+    name = input("What's your name? ").lower()
+
+print("welcome")
