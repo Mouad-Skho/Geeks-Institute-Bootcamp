@@ -1,3 +1,7 @@
+# Exercise 1: What is the Season?
+from ast import mod
+
+
 month = int(input("What is the month? "))
 if month in range(1,13):
     if month in range(3,5):
@@ -13,3 +17,11 @@ if month in range(1,13):
 
 else:
     print("type a valid month bettwen 1 to 12")
+# Exercise 2: For Loop
+# Q1
+for i in range(1,21):
+    print(i)
+# Q2
+for i in range(1,21):
+    if i % 2 == 0:
+        print(i)
