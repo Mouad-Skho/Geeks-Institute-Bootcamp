@@ -1,5 +1,6 @@
 # Exercise 1: What is the Season?
 from ast import mod
+from operator import index
 
 
 month = int(input("What is the month? "))
@@ -16,7 +17,7 @@ if month in range(1,13):
         print("Winter")
 
 else:
-    print("type a valid month bettwen 1 to 12")
+    print("type a valid month bettwen 1 to 12 ")
 # Exercise 2: For Loop
 # Q1
 for i in range(1,21):
@@ -31,5 +32,7 @@ ref = "mouad"
 while name != ref:
     print("try again")
     name = input("What's your name? ").lower()
-
+# Exercise 4: Check the index
 print("welcome")
+names = ['Samus', 'Cortana', 'V', 'Link', 'Mario', 'Cortana', 'Samus']
+print(names.index(input("enter the word: ")))
