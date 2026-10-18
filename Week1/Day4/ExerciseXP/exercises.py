@@ -61,6 +61,16 @@
 # print(brand["number_stores"])
 
 # Exercise 4 : Some Geography
-def describe_city(city , country = "maroc"):
-    return print(f"{city} is in {country}")
-describe_city("casablanca")
+# def describe_city(city , country = "maroc"):
+#     return print(f"{city} is in {country}")
+# describe_city("casablanca")
+
+# Exercise 5 : Random
+import random
+def random_generate(number):
+    random_number = random.randint(1,100)
+    if random_number == number :
+        return print("success message")
+    else:
+        return print(f"fail message: your number in {number} and the random number is {random_number}")
+random_generate(14)
