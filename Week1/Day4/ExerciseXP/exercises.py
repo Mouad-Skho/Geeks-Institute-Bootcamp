@@ -66,11 +66,19 @@
 # describe_city("casablanca")
 
 # Exercise 5 : Random
-import random
-def random_generate(number):
-    random_number = random.randint(1,100)
-    if random_number == number :
-        return print("success message")
-    else:
-        return print(f"fail message: your number in {number} and the random number is {random_number}")
-random_generate(14)
+# import random
+# def random_generate(number):
+#     random_number = random.randint(1,100)
+#     if random_number == number :
+#         return print("success message")
+#     else:
+#         return print(f"fail message: your number in {number} and the random number is {random_number}")
+# random_generate(14)
+# Exercise 6 : Let’s create some personalized shirts !
+def make_shirt(size="large", text="I love Python"):
+    print(f"The size of the shirt is {size} and the text is {text}")
+make_shirt("large","Keep Life Simple")
+make_shirt()
+make_shirt("medium")
+make_shirt("small", "Python is fun")
+make_shirt(text="Keep Learning", size="medium")
