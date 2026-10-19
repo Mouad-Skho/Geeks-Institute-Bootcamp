@@ -7,10 +7,8 @@ if month in range(1,13):
         print("Spring")
     elif month in range(6,8):
         print("Summer")
-
     elif month in range(9,11):
         print("Autumn")
-
     elif month in [12,1,2]:
         print("Winter")
 

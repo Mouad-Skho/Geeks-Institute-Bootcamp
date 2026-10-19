@@ -75,10 +75,52 @@
 #         return print(f"fail message: your number in {number} and the random number is {random_number}")
 # random_generate(14)
 # Exercise 6 : Let’s create some personalized shirts !
-def make_shirt(size="large", text="I love Python"):
-    print(f"The size of the shirt is {size} and the text is {text}")
-make_shirt("large","Keep Life Simple")
-make_shirt()
-make_shirt("medium")
-make_shirt("small", "Python is fun")
-make_shirt(text="Keep Learning", size="medium")
+# def make_shirt(size="large", text="I love Python"):
+#     print(f"The size of the shirt is {size} and the text is {text}")
+# make_shirt("large","Keep Life Simple")
+# make_shirt()
+# make_shirt("medium")
+# make_shirt("small", "Python is fun")
+# make_shirt(text="Keep Learning", size="medium")
+#  Exercise 7 : Temperature Advice
+import random
+def get_random_temp(season):
+    if season.lower() == "winter" or season in str([12,1,2]):
+        upper = 16
+        lower = 10
+    elif season.lower() == "spring" or season in str(range(3,5)):
+        upper = 25
+        lower = 0
+    elif season.lower() == "summer" or season in str(range(6,8)):
+        upper = 40
+        lower = 16
+    elif season.lower() == "autumn" or season in str(range(9,11)):
+        upper = 30
+        lower = 0
+        
+    temp = random.randint(lower,upper)
+    return temp
+print(get_random_temp("Autumn"))
+def main():
+    while True:    
+        season_in = input("Please enter a season (winter, spring, summer, or autumn): ")
+        if season_in in ["winter","spring","summer","autumn"] or range(1,13) :
+            season_out = season_in
+            print(season_out)
+            break
+        else :
+            print("enter a valid Season")
+    
+    temp = get_random_temp(season_out)
+    print(f"The temperature right now is {temp} degrees Celsius")
+    if temp < 0:
+        print("Brrr, that's freezing! Wear some extra layers today.")
+    elif temp >= 0 and temp < 16:
+        print("Quite chilly! Don't forget your coat.")
+    elif temp >= 16 and temp <= 23:
+        print("The weather is mild! A light jacket might be a good idea.")
+    elif temp >= 24 and temp <= 32:
+        print("It's warm outside! Perfect weather for a T-shirt.")
+    elif temp >= 33 and temp <= 40:
+        print("It's really hot! Stay hydrated and wear light clothing.")
+main()
