@@ -23,7 +23,7 @@ for x, y in family.items():
         total_cost = total_cost + 15
 print(family)
 print(total_cost)
-Exercise 3: Zara
+# Exercise 3: Zara
 brand = {
     "name": "Zara",
     "creation_date": 1975,
@@ -64,7 +64,7 @@ def describe_city(city , country = "maroc"):
     return print(f"{city} is in {country}")
 describe_city("casablanca")
 
-Exercise 5 : Random
+# Exercise 5 : Random
 import random
 def random_generate(number):
     random_number = random.randint(1,100)
@@ -73,7 +73,7 @@ def random_generate(number):
     else:
         return print(f"fail message: your number in {number} and the random number is {random_number}")
 random_generate(14)
-Exercise 6 : Let’s create some personalized shirts !
+# Exercise 6 : Let’s create some personalized shirts !
 def make_shirt(size="large", text="I love Python"):
     print(f"The size of the shirt is {size} and the text is {text}")
 make_shirt("large","Keep Life Simple")
@@ -81,7 +81,7 @@ make_shirt()
 make_shirt("medium")
 make_shirt("small", "Python is fun")
 make_shirt(text="Keep Learning", size="medium")
- Exercise 7 : Temperature Advice
+#  Exercise 7 : Temperature Advice
 import random
 def get_random_temp(season):
     if season.lower() == "winter" or season in str([12,1,2]):
