@@ -83,44 +83,107 @@
 # make_shirt("small", "Python is fun")
 # make_shirt(text="Keep Learning", size="medium")
 #  Exercise 7 : Temperature Advice
-import random
-def get_random_temp(season):
-    if season.lower() == "winter" or season in str([12,1,2]):
-        upper = 16
-        lower = 10
-    elif season.lower() == "spring" or season in str(range(3,5)):
-        upper = 25
-        lower = 0
-    elif season.lower() == "summer" or season in str(range(6,8)):
-        upper = 40
-        lower = 16
-    elif season.lower() == "autumn" or season in str(range(9,11)):
-        upper = 30
-        lower = 0
+# import random
+# def get_random_temp(season):
+#     if season.lower() == "winter" or season in str([12,1,2]):
+#         upper = 16
+#         lower = 10
+#     elif season.lower() == "spring" or season in str(range(3,5)):
+#         upper = 25
+#         lower = 0
+#     elif season.lower() == "summer" or season in str(range(6,8)):
+#         upper = 40
+#         lower = 16
+#     elif season.lower() == "autumn" or season in str(range(9,11)):
+#         upper = 30
+#         lower = 0
         
-    temp = random.randint(lower,upper)
-    return temp
-print(get_random_temp("Autumn"))
-def main():
-    while True:    
-        season_in = input("Please enter a season (winter, spring, summer, or autumn): ")
-        if season_in in ["winter","spring","summer","autumn"] or range(1,13) :
-            season_out = season_in
-            print(season_out)
-            break
-        else :
-            print("enter a valid Season")
+#     temp = random.randint(lower,upper)
+#     return temp
+# print(get_random_temp("Autumn"))
+# def main():
+#     while True:    
+#         season_in = input("Please enter a season (winter, spring, summer, or autumn): ")
+#         if season_in in ["winter","spring","summer","autumn"] or range(1,13) :
+#             season_out = season_in
+#             print(season_out)
+#             break
+#         else :
+#             print("enter a valid Season")
     
-    temp = get_random_temp(season_out)
-    print(f"The temperature right now is {temp} degrees Celsius")
-    if temp < 0:
-        print("Brrr, that's freezing! Wear some extra layers today.")
-    elif temp >= 0 and temp < 16:
-        print("Quite chilly! Don't forget your coat.")
-    elif temp >= 16 and temp <= 23:
-        print("The weather is mild! A light jacket might be a good idea.")
-    elif temp >= 24 and temp <= 32:
-        print("It's warm outside! Perfect weather for a T-shirt.")
-    elif temp >= 33 and temp <= 40:
-        print("It's really hot! Stay hydrated and wear light clothing.")
-main()
+#     temp = get_random_temp(season_out)
+#     print(f"The temperature right now is {temp} degrees Celsius")
+#     if temp < 0:
+#         print("Brrr, that's freezing! Wear some extra layers today.")
+#     elif temp >= 0 and temp < 16:
+#         print("Quite chilly! Don't forget your coat.")
+#     elif temp >= 16 and temp <= 23:
+#         print("The weather is mild! A light jacket might be a good idea.")
+#     elif temp >= 24 and temp <= 32:
+#         print("It's warm outside! Perfect weather for a T-shirt.")
+#     elif temp >= 33 and temp <= 40:
+#         print("It's really hot! Stay hydrated and wear light clothing.")
+# main()
+
+# Exercise 8 : Star Wars Quiz
+from tkinter.constants import W
+
+
+data = [
+    {
+        "question": "What is Baby Yoda's real name?",
+        "answer": "Grogu"
+    },
+    {
+        "question": "Where did Obi-Wan take Luke after his birth?",
+        "answer": "Tatooine"
+    },
+    {
+        "question": "What year did the first Star Wars movie come out?",
+        "answer": "1977"
+    },
+    {
+        "question": "Who built C-3PO?",
+        "answer": "Anakin Skywalker"
+    },
+    {
+        "question": "Anakin Skywalker grew up to be who?",
+        "answer": "Darth Vader"
+    },
+    {
+        "question": "What species is Chewbacca?",
+        "answer": "Wookiee"
+    }
+]
+def ask_questions():
+    correct_answers = 0
+    incorrect_answers = 0
+    wrong_answers = []
+    for item in data:
+        print(item["question"])
+        user_answer = input("Your answer: ")
+        if user_answer.lower() == item["answer"].lower():
+            correct_answers += 1
+        else:
+            incorrect_answers += 1
+            wrong_answers.append({"question":item['question'],"answer":item['answer'],"user_answer":user_answer})
+    return correct_answers,incorrect_answers,wrong_answers
+def show_results():
+    correct_answers,incorrect_answers,wrong_answers = ask_questions()
+    print(f"The number of correct answers: {correct_answers}")
+    print(f"The number of incorrect answers: {incorrect_answers}")
+    print(f"The incorrect answers is:")
+
+    for i in wrong_answers:
+        print("-----------------------------")
+        print(f"The Question is: {i['question']} ")
+        print(f"Your Answer: {i['user_answer']} ")
+        print(f"The correct answer: {i['answer']} ")
+    if incorrect_answers > 3 :
+        play_again = input("Game over to play again tab 'yes': ")
+        if play_again.lower() == "yes":
+            ask_questions()
+        
+
+
+show_results()
