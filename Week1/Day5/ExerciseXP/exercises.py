@@ -19,22 +19,33 @@
 
 
 # Exercise 2 : Dogs
-class Dog:
-    def __init__(self, name,height):
-        self.name = name
-        self.height = height
-    def bark(self):
-        print(f"{self.name} goes woof!")
-    def jump(self):
-        print(f"{self.name} jumps {self.height * 2} cm high!")
-dog =Dog('test',12)
-davids_dog =Dog('Rex',50)
-sarahs_dog =Dog('Teacup',20)
-davids_dog.bark()
-davids_dog.jump()
-sarahs_dog.bark()
-sarahs_dog.jump()
-if sarahs_dog.height > davids_dog.height :
-    print("Teacup is bigger")
-else:
-    print("Rex is bigger")
+# class Dog:
+#     def __init__(self, name,height):
+#         self.name = name
+#         self.height = height
+#     def bark(self):
+#         print(f"{self.name} goes woof!")
+#     def jump(self):
+#         print(f"{self.name} jumps {self.height * 2} cm high!")
+# dog =Dog('test',12)
+# davids_dog =Dog('Rex',50)
+# sarahs_dog =Dog('Teacup',20)
+# davids_dog.bark()
+# davids_dog.jump()
+# sarahs_dog.bark()
+# sarahs_dog.jump()
+# if sarahs_dog.height > davids_dog.height :
+#     print("Teacup is bigger")
+# else:
+#     print("Rex is bigger")
+
+# Exercise 3 : Who’s the song producer
+class Song:
+    def __init__(self,lyrics):
+        self.lyrics = lyrics
+    def sing_me_a_song(self):
+        for i in self.lyrics:
+            print(i)
+            print('\n')
+stairway= Song(["There's a lady who's sure","all that glitters is gold", "and she's buying a stairway to heaven"])
+stairway.sing_me_a_song()
