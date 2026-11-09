@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BookVault</title>
+    <link rel="stylesheet" href="style.css">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Playwrite+GB+J:ital,wght@0,100..400;1,100..400&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
+        rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+
+<body class="">
+    <header>
+        <a href="">
+            <span id="logo" role="img" aria-label="BookVault logo"></span>
+            <span id="logo-text">BookVault</span>
+        </a>
+        <div class="searchbox">
+            <svg aria-hidden="true" viewBox="0 0 24 24">
+                <path
+                    d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z" />
+            </svg>
+            <input type="search" id="myInput" placeholder="Search..." oninput="myFunction()">
+        </div>
+        <button class="theme-toggle" type="button" role="switch" aria-checked="false" aria-label="Switch to dark mode">
+            <span class="toggle-indicator"></span>
+            <span class="toggle-moon">
+                <svg xmlns="http://www.w3.org/2000/svg" width="19" height="19" fill="currentColor" aria-hidden="true">
+                    <mask id="dark_mode_svg__a" width="19" height="19" x="0" y="0" maskUnits="userSpaceOnUse"
+                        style="mask-type:alpha">
+                        <path fill="#D9D9D9" d="M.75.085h18v18h-18z"></path>
+                    </mask>
+                    <g mask="url(#dark_mode_svg__a)">
+                        <path fill="currentColor"
+                            d="M9.75 15.835q-2.813 0-4.781-1.969Q2.999 11.898 3 9.085t1.969-4.781q1.968-1.97 4.781-1.969a7 7 0 0 1 1.012.075 4 4 0 0 0-1.228 1.416 4 4 0 0 0-.459 1.884q0 1.687 1.181 2.869 1.182 1.18 2.869 1.181 1.032 0 1.894-.46a4 4 0 0 0 1.406-1.228 6.4 6.4 0 0 1 .075 1.013q0 2.813-1.969 4.781-1.968 1.97-4.781 1.969">
+                        </path>
+                    </g>
+                </svg>
+            </span>
+            <span class="toggle-sun">
+                <svg xmlns="http://www.w3.org/2000/svg" width="21" height="21" fill="currentColor" aria-hidden="true">
+                    <mask id="light_mode_svg__a" width="21" height="21" x="0" y="0" maskUnits="userSpaceOnUse"
+                        style="mask-type:alpha">
+                        <path fill="#D9D9D9" d="M.75.085h20v20h-20z"></path>
+                    </mask>
+                    <g mask="url(#light_mode_svg__a)">
+                        <mask id="light_mode_svg__b" width="21" height="21" x="0" y="0" maskUnits="userSpaceOnUse"
+                            style="mask-type:alpha">
+                            <path fill="#D9D9D9" d="M.75.085h20v20h-20z"></path>
+                        </mask>
+                        <g mask="url(#light_mode_svg__b)">
+                            <path fill="currentColor"
+                                d="M10.745 14.085q-1.662 0-2.828-1.171Q6.75 11.742 6.75 10.08t1.172-2.828q1.17-1.167 2.833-1.167 1.662 0 2.828 1.171 1.167 1.172 1.167 2.834t-1.171 2.828-2.834 1.167m-5.38-3.136h-3.73V9.22h3.73zm14.5 0h-3.73V9.22h3.73zM9.885 4.7V.97h1.73V4.7zm0 14.5V15.47h1.73v3.73zM6.35 6.88l-2.3-2.242L5.266 3.32 7.56 5.637zm9.885 9.886-2.273-2.253 1.185-1.232 2.305 2.253zM13.924 5.69l2.274-2.263L17.43 4.6l-2.232 2.315zm-9.937 9.88 2.336-2.232 1.19 1.144-2.19 2.326z">
+                            </path>
+                        </g>
+                    </g>
+                </svg>
+            </span>
+        </button>
+    </header>
+    <div id="button" class="dropdown">
+        <button class="btn active" name="btn" id="All" onclick="filterObjects('All')">All</button>
+        <button class="btn" name="btn" id="Classic Fiction" onclick="filterObjects('Classic Fiction')">Classic Fiction</button>
+        <button class="btn" name="btn" id="Fantasy" onclick="filterObjects('Fantasy')">Fantasy</button>
+        <button class="btn" name="btn" id="Adventure" onclick="filterObjects('Adventure')">Adventure</button>
+        <button class="dropbtn btn"name="btn" id="All" onclick="filterObjects('All')">More ▾</button>
+        <div class="dropdown-content">
+            <button class="btn" name="btn" id="Fantasy" onclick="filterObjects('Fantasy')">Fantasy</button>
+            <button class="btn" name="btn" id="Adventure" onclick="filterObjects('Adventure')">Adventure</button>
+            <button class="btn" name="btn" id="Literary Fiction" onclick="filterObjects('Literary Fiction')">Literary Fiction</button>
+            <button class="btn" name="btn" id="Classic Arabic Fiction" onclick="filterObjects('Classic Arabic Fiction')">Classic Arabic Fiction</button>
+
+            <button class="btn" name="btn" id="Science Fiction" onclick="filterObjects('Science Fiction')">Science Fiction</button>
+            <button class="btn" name="btn" id="History" onclick="filterObjects('History')">History</button>
+            <button class="btn" name="btn" id="Romance" onclick="filterObjects('Romance')">Romance</button>
+            <button class="btn" name="btn" id="Drama" onclick="filterObjects('Drama')">Drama</button>
+            <button class="btn" name="btn" id="Fiction" onclick="filterObjects('Fiction')">Fiction</button>
+        </div>
+    </div>
+    <section class="collection-header">
+        <h2>Explore Our Collection</h2>
+        <div class="sort-container">
+            <p id="book-count"></p>
+            <select id="sort-select" class="sort-select" onchange="sortCards(this.value)" aria-label="Sort books">
+                <option value="default">Default</option>
+                <option value="az">Title A-Z</option>
+                <option value="za">Title Z-A</option>
+            </select>
+        </div>
+        <div id="empty-state" class="hide">
+            <p>No items found matching your criteria.</p>
+        </div>
+    </section>
+    <div id="cards-grid"></div>
+    <div id="myModal" class="modal">
+
+        <!-- Modal content -->
+        <div class="modal-content">
+            <div class="modal-header">
+                <span class="close">&times;</span>
+                <h2>Book Details</h2>
+            </div>
+            <div class="modal-body" id="modal-body">
+
+            </div>
+            
+        </div>
+
+
+    </div>
+    <script src="data.js"></script>
+    <script src="app.js"></script>
+</body>
+
+</html>
