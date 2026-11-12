@@ -1,0 +1,15 @@
+{
+  "name": "math-app",
+  "version": "1.0.0",
+  "description": "",
+  "license": "ISC",
+  "author": "",
+  "type": "commonjs",
+  "main": "app.js",
+  "scripts": {
+    "test": "node app.js"
+  },
+  "dependencies": {
+    "lodash": "^4.18.1"
+  }
+}
