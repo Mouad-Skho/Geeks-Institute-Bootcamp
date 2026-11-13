@@ -28,3 +28,17 @@ for(let person of people){
     }
     
 }
+// Exercise 2 : Your favorite colors
+const colors = ['lilac','violet','Blue Iris','yellow']
+const pr = new Intl.PluralRules('en', { type: 'ordinal' });
+const suffixMap = { one: 'st', two: 'nd', few: 'rd', other: 'th' };
+const ordinal = n => n + suffixMap[pr.select(n)];
+console.log('-------------without ordinal number----------')
+colors.forEach((color,index)=>{
+    console.log(`My #${index+1} choice is ${color}` )
+})
+console.log('-------------with ordinal number-------------')
+colors.forEach((color,index)=>{
+    console.log(`My #${ordinal(index+1)} choice is ${color}` )
+})
+
