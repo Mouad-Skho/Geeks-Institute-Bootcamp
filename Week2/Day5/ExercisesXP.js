@@ -79,20 +79,30 @@
 // console.log(building.numberOfRoomsAndRent);
 
 // Exercise 5 : Family
-const family = {
-    familyName: "l3arbi",
-    numberOfMembers: 11,
-    address: "sebt gzoula, maghrib",
-    hasPet: true,
-    annualIncome: 850000
-};
-console.log('-------------keys----------------')
-for (let key in family){
-    console.log(key)
-}
-console.log('-------------values----------------')
+// const family = {
+//     familyName: "l3arbi",
+//     numberOfMembers: 11,
+//     address: "sebt gzoula, maghrib",
+//     hasPet: true,
+//     annualIncome: 850000
+// };
+// console.log('-------------keys----------------')
+// for (let key in family){
+//     console.log(key)
+// }
+// console.log('-------------values----------------')
 
-for (let key in family){
-    console.log(family[key])
+// for (let key in family){
+//     console.log(family[key])
+// }
+// Exercise 6 : Rudolf
+const details = {
+  my: 'name',
+  is: 'Rudolf',
+  the: 'reindeer'
 }
-
+let sentence = '';
+for (let key in details) {
+  sentence += `${key} ${details[key]} `;
+}
+console.log(sentence.trim());
