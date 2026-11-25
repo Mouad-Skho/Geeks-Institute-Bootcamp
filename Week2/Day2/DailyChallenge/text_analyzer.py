@@ -6,6 +6,11 @@ class TextAnalyzer:
     def __str__(self):
         count = self.text.split()
         return f"TextAnalyzer object with {len(count)} words"
+    def __len__(self):
+        return len("".join(self.text.split()))
 
-analyzer = TextAnalyzer("Python is fun")
+analyzer = TextAnalyzer("Python")
 print(analyzer)
+# output: TextAnalyzer object with 1 words
+print(analyzer.__len__())
+# output: 6
