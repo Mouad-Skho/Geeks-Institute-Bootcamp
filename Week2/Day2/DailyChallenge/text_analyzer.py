@@ -21,4 +21,6 @@ analyzer = TextAnalyzer("Python is fun and Python is powerful")
 print(analyzer)
 print(analyzer.__len__())
 print(analyzer.word_count())
+
 print(analyzer.count_word("Python"))
+# output : 2
