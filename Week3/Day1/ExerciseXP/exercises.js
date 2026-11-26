@@ -52,3 +52,21 @@ myBill();
 console.log(stock);
 // output: Your bill is 5.5
 // { banana: 5, apple: 0, pear: 12, orange: 31, blueberry: 1 } 
+
+// Exercise 3 : What’s in my wallet ?
+function changeEnough(itemPrice, amountOfChange){
+    const coinValues = [ 0.25 , 0.10 , 0.05 , 0.01 ];
+    if (amountOfChange.reduce(( acc, count, i ) => acc + count * coinValues[i], 0 ) >= itemPrice) {
+        return true;
+    } else {
+        return false;
+    }
+}
+console.log(changeEnough(4.25, [25, 20, 5, 0]));
+// output: true
+console.log(changeEnough(14.11, [2,100,0,0])) 
+// output: false
+console.log(changeEnough(0.75, [0,0,20,5]))
+// output: true
+
+
