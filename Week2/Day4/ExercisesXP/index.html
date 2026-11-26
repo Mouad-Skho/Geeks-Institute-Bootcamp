@@ -8,12 +8,12 @@
 </head>
 <body>
     <header>
-        <h1>My Study Planner</h1>
-        <h4>A simple plan for a productive study day.</h4>
+        <h1 class="main-title">My Study Planner</h1>
+        <h4 class="main-p">A simple simple plan for a productive study day.</h4>
     </header>
     <main>
         <section>
-            <h1>What to bring</h1>
+            <h1 class="titles">What to bring</h1>
             <ul>
                 <li>Laptop</li>
                 <li>Notebook</li>
@@ -21,7 +21,7 @@
             </ul>
         </section>
         <section>
-            <h1>My study steps</h1>
+            <h1 class="titles">My study steps</h1>
             <ol>
                 <li>Review the lesson</li>
                 <li>Complete the exercise</li>
@@ -29,7 +29,7 @@
             </ol>
         </section>
         <section>
-            <h1>Weekly timetable</h1>
+            <h1 class="titles">Weekly timetable</h1>
             <table>
                 <tr>
                     <th>Day</th>
@@ -54,13 +54,19 @@
             </table>
         </section>
         <section>
-            <h1>My checklist</h1>
-            <input type="checkbox" id="ReadLesson" checked>
-            <label for="ReadLesson">Read the lesson</label>
-            <input type="checkbox" id="FinishExercise">
-            <label for="FinishExercise">Finish the exercise</label>
-            <input type="checkbox" id="SubmitWork">
-            <label for="SubmitWork">Submit my work</label>
+            <h1 class="titles">My checklist</h1>
+            <div class="checkbox">
+                <input type="checkbox" id="ReadLesson" checked>
+                <label for="ReadLesson">Read the lesson</label>
+            </div>
+            <div class="checkbox">
+                <input type="checkbox" id="FinishExercise">
+                <label for="FinishExercise">Finish the exercise</label>
+            </div>
+            <div class="checkbox">
+                <input type="checkbox" id="SubmitWork">
+                <label for="SubmitWork">Submit my work</label>
+            </div>
             
         </section>
     </main>
