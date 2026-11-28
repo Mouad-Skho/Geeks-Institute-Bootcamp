@@ -69,4 +69,41 @@ console.log(changeEnough(14.11, [2,100,0,0]))
 console.log(changeEnough(0.75, [0,0,20,5]))
 // output: true
 
-
+// Exercise 4 : Vacations Costs
+console.log("--------Vacations Costs--------");
+function hotelCost(nights){
+    const numberOfNights = parseInt(nights);
+    if (isNaN(numberOfNights) || numberOfNights < 0) {
+        alert("Please enter a valid positive number of nights");
+        return hotelCost();
+    }
+    return console.log(numberOfNights * 140);
+}
+function planeRideCost(destination){
+        if (destination.toLowerCase() === "london") {
+            return console.log("183$");
+        } else if (destination.toLowerCase() === "paris") {
+            return console.log("220$");
+        } else if (destination && destination.trim() !== "") {
+            return console.log("300$");
+        } else {
+            alert("Please enter a valid destination");
+            return planeRideCost();
+        }
+}
+function rentalCarCost(days){
+    const numberOfDays = parseInt(days);
+    if (isNaN(numberOfDays) || numberOfDays < 0) {
+        alert("Please enter a valid positive number of days");
+        return rentalCarCost();
+    }
+    const totalCost = numberOfDays * 40;
+    return console.log(numberOfDays > 10 ? totalCost * 0.95 : totalCost);
+}
+function totalVacationCost(){
+    const nights = prompt("Please enter the number of nights you would like to stay in the hotel:");
+    const destination = prompt("Please enter your destination:");
+    const days = prompt("Please enter the number of days you would like to rent a car:");
+    return hotelCost(nights) + planeRideCost(destination) + rentalCarCost(days);
+}
+totalVacationCost();
